@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import BackgroundCanvas from './components/BackgroundCanvas/BackgroundCanvas';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
-import About from './components/About/About';
-import Skills from './components/Skills/Skills';
-import Projects from './components/Projects/Projects';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
+const About = lazy(() => import('./components/About/About'));
+const Skills = lazy(() => import('./components/Skills/Skills'));
+const Projects = lazy(() => import('./components/Projects/Projects'));
+const Contact = lazy(() => import('./components/Contact/Contact'));
+const Footer = lazy(() => import('./components/Footer/Footer'));
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -53,14 +53,18 @@ export default function App() {
       {/* Main Content Sections */}
       <main>
         <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact onShowToast={showToast} />
+        <Suspense fallback={<div style={{ padding: 40, textAlign: 'center' }}>Loading content…</div>}>
+          <About />
+          <Skills />
+          <Projects />
+          <Contact onShowToast={showToast} />
+        </Suspense>
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Suspense fallback={<div style={{ height: 80 }} /> }>
+        <Footer />
+      </Suspense>
 
       {/* Floating Toast Notification */}
       {toastMessage && (
