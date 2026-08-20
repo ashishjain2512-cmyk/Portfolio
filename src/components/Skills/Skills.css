@@ -1,0 +1,8 @@
+/* Skills styles */
+#skills .skills-filters{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;margin-bottom:3rem}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem}
+.skills-card{padding:2rem}
+.skill-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}
+.progress-bar{width:100%;height:8px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden}
+.progress-bar > div{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent-cyan),var(--accent-purple));box-shadow:0 0 10px rgba(0,242,254,.5);transition:width 1s}
+@media (max-width:600px){.skills-grid{grid-template-columns:1fr}}

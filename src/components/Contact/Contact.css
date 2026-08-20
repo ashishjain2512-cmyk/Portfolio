@@ -1,0 +1,14 @@
+/* Contact component styles */
+#contact .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:3rem}
+#contact .contact-info{padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between}
+#contact .contact-info h3{font-size:1.6rem;margin-bottom:1.2rem;color:var(--accent-cyan)}
+#contact .contact-info p{color:var(--text-secondary);margin-bottom:2rem;line-height:1.7}
+#contact .contact-info .meta-row{display:flex;flex-direction:column;gap:1.5rem;margin-bottom:2.5rem}
+#contact .contact-info .btn-icon{cursor:default}
+#contact .contact-form{padding:2.5rem}
+#contact .contact-form form{display:flex;flex-direction:column;gap:1.25rem}
+#contact .form-control{width:100%;padding:0.85rem 1.1rem;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid var(--border-light);color:var(--text-primary);font-size:0.95rem;outline:none;transition:border-color .2s}
+#contact .form-control:focus{border-color:var(--accent-cyan)}
+#contact .full-width-btn{width:100%;margin-bottom:1.5rem}
+#contact .social-bar{display:flex;gap:1rem;justify-content:center}
+@media (max-width:768px){#contact .contact-grid{grid-template-columns:1fr}}

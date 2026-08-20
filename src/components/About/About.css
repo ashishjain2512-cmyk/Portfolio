@@ -1,0 +1,6 @@
+/* About styles */
+#about{background:rgba(13,17,26,0.4)}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;margin-bottom:4rem;align-items:center}
+.story-card{padding:2.5rem}
+.pillars-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.pillar-card{padding:1.8rem}
